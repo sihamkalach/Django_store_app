@@ -1,0 +1,43 @@
+{% extends 'nav.html' %}
+{% block content %}
+{% load static%}
+<br>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Document</title>
+    <style>
+        .lightcategories{
+            width: 90%;
+            margin: 0 40px;
+            margin-top: 100px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+    </style>
+   </head>
+   <body>
+    <div class="lightcategories">
+        {% for light_product in lighting_products %}
+        <div class="card" style="width: 18rem;border-radius: 30px;">
+            <img src="{{ light_product.image.url }}" class="card-img-top hover-scale" alt="..." height="300px" style="border-radius: 40px; padding: 8px;">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">{{ light_product.name }} <span>{{light_product.price}}$</span></h5>
+              <p class="card-text">{{ light_product.description }}</p>
+              <div class="action d-flex justify-content-between">
+                <a href="#" class="btn">More Details</a>
+                <a href="#" class="btn btn-danger">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        {% endfor%}
+    </div>
+   </body>
+   </html>
+{% endblock content%}

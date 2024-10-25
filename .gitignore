@@ -1,0 +1,25 @@
+# Fichiers Python compilés
+*.pyc
+__pycache__/
+
+# Base de données SQLite
+db.sqlite3
+
+# Fichiers de configuration et d'environnement
+.env
+pyvenv.cfg
+
+# Environnement virtuel (si applicable, parfois dans un dossier comme "venv" ou "Lib")
+Lib/
+Scripts/
+
+# Dossier media (si utilisé pour les uploads d'images ou de fichiers par les utilisateurs)
+images/
+
+# Static files (fichiers générés automatiquement par collectstatic, si tu utilises cela)
+static/
+
+# Fichiers compressés
+*.zip
+
+

@@ -1,0 +1,53 @@
+{% block content %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            height: 100vh;
+            background: #dfe1e2f3;
+        }
+        .center{
+            width: 80%;
+            height: 500px;
+            margin: 20px auto;
+            margin-top: 40px;
+            background: url("{% static 'images/xx.gif'%}");
+            background-position: center;
+            z-index: 999;
+        }
+        .center h1{
+            color: green;
+            text-align: center;
+            padding: 40px 0px;
+            font-size: 50px;
+        }
+        .center p{
+            text-align: center;
+            padding: 40px;
+            font-size: 20px;
+        }
+        .center a{
+            display: block;
+            text-align: center;
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        
+        <h1>Thank you for your order &#128525</h1>
+        <br><br><br><br><br><br>
+        <p>
+            We'll be in touch shortly to confirm the details and ensure a smooth processing of your purchase. Your satisfaction is our priority, and we're here to assist you every step of the way. Stay tuned!
+        </p>
+        <a href="{% url 'pagehome'%}">Back to home</a>
+    </div>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,74 @@
+{% extends 'nav.html'%}
+{% block content %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <div class="content">
+        <h1>Revamp Your Living Space</h1>
+        <h3>Chic and Modern Décor Tips</h3>
+        <form action="details.html" class="details">
+          <button type="submit">Contact Us</button>
+        </form>
+      </div>
+    </div>
+</div>
+<section>
+  <div class="newcollection">
+    <div class="newcollections-title">
+      <h1>New Collection</h1>
+      <p> Explore Our Collection of High-Quality and Exceptional Design</p>
+    </div>
+    <div class="newcollections-content d-flex justify-content-center gap-5  flex-wrap">
+        {% for product in products %}
+          <div class="card" style="width: 18rem;border-radius: 30px;">
+            <img src="{{ product.image.url }}" class="card-img-top hover-scale" alt="..." height="300px" style="border-radius: 40px; padding: 8px;">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">{{ product.name }} <span>{{product.price}}$</span></h5>
+              <p class="card-text">{{ product.description }}</p>
+              <div class="action d-flex justify-content-between">
+                <a href="{% url 'buy' product_id=product.id %}" class="btn">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        {% endfor%}
+    </div>
+  </div>
+</section>
+<section>
+  <div class="newcollections-title">
+    <h1>The Excellence of Our Furniture</h1>
+    <p> Quality, Functionality, Design, and Customer Service</p>
+  </div>
+  <div class="norme">
+    <div class="box">
+      <h3>Quality</h3>
+      <div><img src="{%static 'images/controle-de-qualite.png'%}" alt="" width="80px"></div>
+      <p>Our suppliers are rigorously selected for their expertise. All our furniture is made from high-quality materials and is built to last for many years.</p>
+    </div>
+    <div class="box">
+      <h3>Functionality</h3>
+      <div><img src="{%static 'images/reglage.png'%}" alt="" width="80px"></div>
+      <p>Our furniture is chosen to be beautiful and comfortable, but also practical and functional.</p>
+    </div>
+    <div class="box">
+      <h3>Design</h3>
+      <div><img src="{%static 'images/art.png'%}" alt="" width="80px"></div>
+      <p>We follow the latest trends and travel the world to bring you the newest designs as well as timeless models that blend into any decor.</p>
+    </div>
+    <div class="box">
+      <h3>Customer Service</h3>
+      <div><img src="{%static 'images/vente.png'%}" alt="" width="80px"></div>
+      <p>We are committed to providing excellent customer service, with delivery options throughout Morocco and technical support to meet customer needs.</p>
+    </div>
+
+  </div>
+</section>
+</body>
+</html>
+{% endblock content%}
